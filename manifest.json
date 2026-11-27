@@ -1,0 +1,26 @@
+{
+  "name": "GANJI OMO’ZGOR",
+  "short_name": "Ganji Omo'zgor",
+  "description": "Ҳар дарс -қадаме ба сӯи дониш. Нақша-конспектҳо, презентатсияҳо ва маводҳои таълимӣ барои омӯзгорон.",
+  "start_url": "/Ganji-omo-zgor/",
+  "scope": "/Ganji-omo-zgor/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f7fb",
+  "theme_color": "#0f4c81",
+  "lang": "tg",
+  "icons": [
+    {
+      "src": "Logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "Logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
