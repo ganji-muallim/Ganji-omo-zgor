@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GANJI OMO’ZGOR — Ҳар дарс -қадаме ба сӯи дониш</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" href="Logo.png" />
+  <link rel="apple-touch-icon" href="Logo.png" />
+  <meta name="theme-color" content="#0f4c81" />
+  <meta name="description" content="Нақша-конспектҳо, презентатсияҳо ва маводҳои дарси кушод барои омӯзгорони забон ва адабиёти тоҷик ва тарбия (синфҳои 8–11)." />
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --primary: #0f4c81;
+      --primary-dark: #093256;
+      --accent: #e09f3e;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --success: #0d9488;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 40px;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #ffffff;
+      padding: 20px 16px 24px;
+      box-shadow: 0 4px 14px rgba(15, 76, 129, 0.18);
+    }
+
+    .header-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      object-fit: cover;
+      background: #ffffff;
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      flex-shrink: 0;
+    }
+
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .brand-slogan {
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      margin-top: 2px;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: -12px auto 0;
+      padding: 0 14px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      color: var(--primary-dark);
+      margin-bottom: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--text);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.12);
+    }
+
+    textarea {
+      min-height: 84px;
+      resize: vertical;
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      border-radius: 11px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .feedback {
+      margin-top: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      min-height: 20px;
+    }
+
+    .materials-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .material-item {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      background: #fafcff;
+    }
+
+    .material-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .material-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--primary-dark);
+    }
+
+    .price-tag {
+      background: #fef3c7;
+      color: #92400e;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 3px 9px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .material-meta {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .material-desc {
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    .empty-state {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+      padding: 16px 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="Logo.png" alt="GANJI OMO’ZGOR" class="brand-logo" onerror="this.style.display='none'" />
+      <div>
+        <div class="brand-title">GANJI OMO’ZGOR</div>
+        <div class="brand-slogan">Ҳар дарс -қадаме ба сӯи дониш</div>
+        <div class="status-badge" id="dbStatus">⏳ Санҷиши пайвастшавӣ ба база...</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Илова кардани маводи нав</h2>
+      <form id="materialForm">
+        <div class="form-group">
+          <label for="title">Унвони мавод / дарс</label>
+          <input type="text" id="title" placeholder="Масалан: Нақша-конспект — Меъёри сарфию наҳвӣ" required />
+        </div>
+
+        <div class="form-group">
+          <label for="grade">Синф</label>
+          <select id="grade">
+            <option value="Синфи 8">Синфи 8</option>
+            <option value="Синфи 9">Синфи 9</option>
+            <option value="Синфи 10">Синфи 10</option>
+            <option value="Синфи 11">Синфи 11</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Фан / Бахш</label>
+          <select id="subject">
+            <option value="Забон ва адабиёти тоҷик">Забон ва адабиёти тоҷик</option>
+            <option value="Тарбия">Тарбия</option>
+            <option value="Дарси кушод">Дарси кушод</option>
+            <option value="Презентатсия">Презентатсия</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="price">Нарх (масалан: Ройгон ё 15 сомонӣ)</label>
+          <input type="text" id="price" value="Ройгон" />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Тавсифи мухтасар</label>
+          <textarea id="description" placeholder="Маълумот дар бораи нақша-конспект, методҳо (БАО, Кластер) ва мавод..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Сабт кардан дар база</button>
+        <div class="feedback" id="formFeedback"></div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Маводҳои омӯзгорон</h2>
+      <div class="materials-list" id="materialsList">
+        <div class="empty-state">Маводҳо бор шуда истодаанд...</div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      onSnapshot,
+      query,
+      orderBy,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    // Агар конфигуратсияи Firebase-и шумо дар нусхаи қаблии index.html буд,
+    // ин объект метавонад бо маълумоти лоиҳаи шумо пурра карда шавад.
+    const firebaseConfig = window.__GANJI_FIREBASE_CONFIG__ || {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    const statusBadge = document.getElementById("dbStatus");
+    const materialsList = document.getElementById("materialsList");
+    const form = document.getElementById("materialForm");
+    const feedback = document.getElementById("formFeedback");
+
+    const localItems = [];
+
+    function renderItems(items) {
+      if (!items.length) {
+        materialsList.innerHTML = '<div class="empty-state">Ҳоло маводе сабт нашудааст. Аввалин маводро аз шакли боло илова кунед.</div>';
+        return;
+      }
+
+      materialsList.innerHTML = items.map(item => `
+        <article class="material-item">
+          <div class="material-header">
+            <div class="material-title">${escapeHtml(item.title || "Бе унвон")}</div>
+            <span class="price-tag">${escapeHtml(item.price || "Ройгон")}</span>
+          </div>
+          <div class="material-meta">${escapeHtml(item.grade || "")} • ${escapeHtml(item.subject || "")}</div>
+          ${item.description ? `<div class="material-desc">${escapeHtml(item.description)}</div>` : ""}
+        </article>
+      `).join("");
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    let db = null;
+    try {
+      const app = initializeApp(firebaseConfig);
+      db = getFirestore(app);
+      statusBadge.textContent = "Firestore пайваст аст ✓";
+      statusBadge.style.background = "rgba(13, 148, 136, 0.28)";
+
+      const q = query(collection(db, "materials"), orderBy("createdAt", "desc"));
+      onSnapshot(q, (snapshot) => {
+        const docs = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+        renderItems(docs);
+      }, () => {
+        renderItems(localItems);
+      });
+    } catch (err) {
+      statusBadge.textContent = "Режими маҳаллӣ фаъол аст";
+      renderItems(localItems);
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const newItem = {
+        title: document.getElementById("title").value.trim(),
+        grade: document.getElementById("grade").value,
+        subject: document.getElementById("subject").value,
+        price: document.getElementById("price").value.trim() || "Ройгон",
+        description: document.getElementById("description").value.trim(),
+        createdAt: serverTimestamp()
+      };
+
+      if (!newItem.title) return;
+
+      try {
+        if (db && firebaseConfig.projectId !== "YOUR_PROJECT_ID") {
+          await addDoc(collection(db, "materials"), newItem);
+        } else {
+          localItems.unshift(newItem);
+          renderItems(localItems);
+        }
+        feedback.style.color = "#0d9488";
+        feedback.textContent = "Мавод бомуваффақият сабт шуд ✓";
+        form.reset();
+        document.getElementById("price").value = "Ройгон";
+      } catch (error) {
+        localItems.unshift(newItem);
+        renderItems(localItems);
+        feedback.style.color = "#0f4c81";
+        feedback.textContent = "Дар рӯйхати ҷорӣ илова шуд ✓";
+      }
+    });
+
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js").catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
